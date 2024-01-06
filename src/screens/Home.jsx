@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { Button } from 'react-native-paper'
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View>
-      <Text>Home</Text>
+      <Button onPress={() => navigation.navigate('Players')}>Commencer</Button>
     </View>
   )
 }
