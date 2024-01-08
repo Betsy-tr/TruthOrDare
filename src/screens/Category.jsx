@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import Swiper from 'react-native-swiper'
+import { useNavigation } from '@react-navigation/native'
 
 var styles = {
   wrapper: {},
@@ -36,22 +37,32 @@ var styles = {
 }
 
 const Category = () => {
+
+  const navigation = useNavigation()
+
+  const play = () => { 
+
+    navigation.navigate('TruthOrDare')
+
+  }
+
   return (
-    <Swiper style={styles.wrapper} showsButtons loop={false}>
+    <Swiper style={styles.wrapper} showsButtons={false} loop={false}>
       <View testID="Slide1" style={styles.slide1}>
-        <Text style={styles.text}>Slide 1</Text>
+        <Text style={styles.text} onPress={play}>Slide 1</Text>
       </View>
       <View testID="Slide2" style={styles.slide2}>
-        <Text style={styles.text}>Slide 2</Text>
+        <Text style={styles.text} onPress={play}>Slide 2</Text>
       </View>
       <View testID="Slide3" style={styles.slide3}>
-        <Text style={styles.text}>Slide 3</Text>
+        <Text style={styles.text} onPress={play}>Slide 3</Text>
       </View>
       <View testID="Slide4" style={styles.slide4}>
-        <Text style={styles.text}>Slide 4</Text>
+        <Text style={styles.text} onPress={play}>Slide 4</Text>
       </View>
     </Swiper>
   )
 }
+
 
 export default Category
