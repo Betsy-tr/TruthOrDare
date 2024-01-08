@@ -8,28 +8,28 @@ var styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#3AF16B'
+    backgroundColor: '#FFFFFF'
   },
   slide2: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#97CAE5'
+    backgroundColor: '#FFFFFF'
   },
   slide3: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F35558'
+    backgroundColor: '#FFFFFF'
   },
   slide4: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#EDF346'
+    backgroundColor: '#FFFFFF'
   },
   text: {
-    color: '#fff',
+    color: '#000',
     fontSize: 30,
     fontWeight: 'bold'
   }
@@ -38,17 +38,17 @@ var styles = {
 const Category = () => {
   return (
     <Swiper style={styles.wrapper} showsButtons loop={false}>
-      <View testID="Hello" style={styles.slide1}>
-        <Text style={styles.text}>Hello Swiper</Text>
+      <View testID="Slide1" style={styles.slide1}>
+        <Text style={styles.text}>Slide 1</Text>
       </View>
-      <View testID="Beautiful" style={styles.slide2}>
-        <Text style={styles.text}>Beautiful</Text>
+      <View testID="Slide2" style={styles.slide2}>
+        <Text style={styles.text}>Slide 2</Text>
       </View>
-      <View testID="Simple" style={styles.slide3}>
-        <Text style={styles.text}>And simple</Text>
+      <View testID="Slide3" style={styles.slide3}>
+        <Text style={styles.text}>Slide 3</Text>
       </View>
-      <View testID="Test" style={styles.slide4}>
-        <Text style={styles.text}>Test</Text>
+      <View testID="Slide4" style={styles.slide4}>
+        <Text style={styles.text}>Slide 4</Text>
       </View>
     </Swiper>
   )
