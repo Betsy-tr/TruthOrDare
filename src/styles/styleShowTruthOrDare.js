@@ -14,30 +14,20 @@ export default StyleSheet.create({
         marginLeft: 15,
         marginBottom: 20
     },
-    input:{
-        backgroundColor: 'transparent',
-        borderRadius: 15,
-        borderTopStartRadius: 15,
-        borderTopEndRadius: 15,
-        borderWidth: 1,
-        borderColor: 'white',
-        width: 305,
-        height: 50,
-        marginLeft: 35,
-        marginBottom: 10
-    },
-    empty:{
-        fontSize: 18,
-        color: 'white',
-        textAlign: 'center'
-    },
     namePlayer:{
         color: 'white',
-        fontSize: 20,
-        marginTop: 10,
-        marginLeft: 35
+        fontSize: 35,
+        marginTop: 100,
+        textAlign: 'center',
+        marginBottom: 45
     },
-    buttonResetPlayer:{
+    content:{
+        color: 'white',
+        fontSize: 30,
+        textAlign: 'center',
+        marginBottom: 70
+    },
+    buttonNextPlayer:{
         borderRadius: 15,
         borderWidth: 1,
         borderColor: 'white',
@@ -48,7 +38,7 @@ export default StyleSheet.create({
         padding: 5,
         marginBottom: 45,
     },
-    buttonStartGame:{
+    buttonResetGame:{
         borderRadius: 15,
         borderWidth: 1,
         borderColor: 'white',

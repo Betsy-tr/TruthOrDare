@@ -9,7 +9,26 @@ const Home = ({navigation}) => {
         style={{flex: 1}}
         source={require('../assets/Home.png')}
       >
-        <Button onPress={() => navigation.navigate('Players')}>Commencer</Button>
+        <Button
+          style={{
+            borderRadius: 15,
+            borderWidth: 1,
+            borderColor: 'white',
+            width: 205,
+            height: 55,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            padding: 5,
+            marginTop: 600
+          }} 
+          labelStyle={{
+            color: 'white', 
+            fontSize: 21
+          }} 
+          onPress={() => navigation.navigate('Players')}
+        >
+          Commencer
+        </Button>
       </ImageBackground>
     </View>
   )

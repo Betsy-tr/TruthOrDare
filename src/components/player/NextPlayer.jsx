@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import { nextPlayer } from '../../redux/player'
 import { Button } from 'react-native-paper'
+import styleShowTruthOrDare from '../../styles/styleShowTruthOrDare'
 
 const NextPlayer = ({id}) => {
 
@@ -31,7 +32,7 @@ const NextPlayer = ({id}) => {
 
   return (
     <View>
-      <Button onPress={suivant}>Joueur suivant</Button>
+      <Button style={styleShowTruthOrDare.buttonNextPlayer} labelStyle={{color: 'white' , fontSize: 21}} onPress={suivant}>Joueur suivant</Button>
     </View>
   )
 }
