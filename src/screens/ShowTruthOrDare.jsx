@@ -16,7 +16,7 @@ const ShowTruthOrDare = () => {
         source={require('../assets/bg.png')}
       >
         <Text style={styleShowTruthOrDare.namePlayer}>{players[position].name}</Text>
-        <Text style={styleShowTruthOrDare.content}>Contenu selon le choix du joueur</Text>
+        <Text style={styleShowTruthOrDare.content}>Affichage en fonction du choix du joueur</Text>
         <NextPlayer/>
         <ResetGame/>
       </ImageBackground> 

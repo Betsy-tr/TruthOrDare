@@ -23,7 +23,8 @@ export default StyleSheet.create({
         borderColor: 'white',
         width: 305,
         height: 50,
-        marginLeft: 35,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         marginBottom: 10
     },
     empty:{
