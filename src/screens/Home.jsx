@@ -1,11 +1,16 @@
-import { View } from 'react-native'
+import { ImageBackground, View } from 'react-native'
 import React from 'react'
 import { Button } from 'react-native-paper'
 
 const Home = ({navigation}) => {
   return (
-    <View>
-      <Button onPress={() => navigation.navigate('Players')}>Commencer</Button>
+    <View style={{flex: 1}}>
+      <ImageBackground
+        style={{flex: 1}}
+        source={require('../assets/Home.png')}
+      >
+        <Button onPress={() => navigation.navigate('Players')}>Commencer</Button>
+      </ImageBackground>
     </View>
   )
 }
