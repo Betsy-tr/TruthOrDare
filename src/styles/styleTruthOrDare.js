@@ -16,22 +16,22 @@ export default StyleSheet.create({
         borderRadius: 15,
         borderWidth: 1,
         borderColor: 'white',
-        width: 205,
-        height: 55,
+        width: 155,
+        height: 50,
         marginLeft: 'auto',
         marginRight: 'auto',
-        padding: 5,
+        padding: 8,
         marginBottom: 45,
     },
     buttonTruth:{
         borderRadius: 15,
         borderWidth: 1,
         borderColor: 'white',
-        width: 205,
-        height: 55,
+        width: 155,
+        height: 50,
         marginLeft: 'auto',
         marginRight: 'auto',
-        padding: 5
+        padding: 8
     },
     
      

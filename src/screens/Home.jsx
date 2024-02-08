@@ -6,7 +6,7 @@ const Home = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <ImageBackground
-        style={{flex: 1}}
+        style={{ flex: 1 }}
         source={require('../assets/Home.png')}
       >
         <Button
@@ -18,7 +18,7 @@ const Home = ({navigation}) => {
             height: 55,
             marginLeft: 'auto',
             marginRight: 'auto',
-            padding: 5,
+            padding: 8,
             marginTop: 600
           }} 
           labelStyle={{
