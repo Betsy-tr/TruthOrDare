@@ -9,25 +9,25 @@ var styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#64EB16'
   },
   slide2: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#F2FF00'
   },
   slide3: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#F71AAA'
   },
   slide4: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#4A1EFB'
   },
   text: {
     color: '#000',
@@ -49,16 +49,16 @@ const Category = () => {
   return (
     <Swiper style={styles.wrapper} showsButtons={false} loop={false}>
       <View testID="Slide1" style={styles.slide1}>
-        <Text style={styles.text} onPress={play}>Slide 1</Text>
+        <Text style={styles.text} onPress={play}>DRÔLE</Text>
       </View>
       <View testID="Slide2" style={styles.slide2}>
-        <Text style={styles.text} onPress={play}>Slide 2</Text>
+        <Text style={styles.text} onPress={play}>GÊNANTE</Text>
       </View>
       <View testID="Slide3" style={styles.slide3}>
-        <Text style={styles.text} onPress={play}>Slide 3</Text>
+        <Text style={styles.text} onPress={play}>SOIRÉE</Text>
       </View>
       <View testID="Slide4" style={styles.slide4}>
-        <Text style={styles.text} onPress={play}>Slide 4</Text>
+        <Text style={styles.text} onPress={play}>COUPLE</Text>
       </View>
     </Swiper>
   )
