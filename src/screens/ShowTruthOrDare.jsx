@@ -29,6 +29,7 @@ const ShowTruthOrDare = () => {
     <View>
       <Text>ShowTruthOrDare</Text>
       <Text>{players[position].name}</Text>
+      {/* <Text>{ShowTod?.title}</Text> */}
       <NextPlayer/>
       <ResetGame/>
     </View>

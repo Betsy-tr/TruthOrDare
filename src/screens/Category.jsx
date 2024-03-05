@@ -1,8 +1,7 @@
 import { View, Text } from 'react-native'
-import React, { useState , useEffect } from 'react'
+import React from 'react'
 import Swiper from 'react-native-swiper'
 import { useNavigation } from '@react-navigation/native'
-//import { loadData } from '../commonjs/db'
 
 var styles = {
   wrapper: {},
@@ -41,27 +40,11 @@ const Category = () => {
 
   const navigation = useNavigation()
 
-  //const [categories, setCategories] = useState([])
-
   const play = () => { 
 
     navigation.navigate('TruthOrDare')
 
   }
-
-  /*** const loadCategory = async () => { 
-
-    const dataCategories = await loadData('categorie')
-
-    setCategories(dataCategories)
-
-  }
-
-  useEffect(() => {
-
-    loadCategory()
-
-  }, []) ***/
 
   return (
     <Swiper style={styles.wrapper} showsButtons={false} loop={false}>
