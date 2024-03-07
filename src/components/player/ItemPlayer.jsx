@@ -17,7 +17,7 @@ const ItemPlayer = ({player}) => {
   return (
     <View>
       <Text>{player.name}</Text>
-      <Button onPress={supprimer}>Effacer</Button>
+      <Button onPress={supprimer}>🗑️</Button>
     </View>
   )
 }
