@@ -1,5 +1,5 @@
 import { firestore } from '../../firebase'
-import { collection, doc , getDoc, getDocs , query } from 'firebase/firestore'
+import { collection, doc , getDoc, getDocs , query , where } from 'firebase/firestore'
 
 
 export const loadData = async (collectionName) => { 
@@ -35,16 +35,45 @@ export const loadData = async (collectionName) => {
  * params(id <string> : id category)
  * 
 ***/ 
-export const loadDataDareOrTruth = async ( collectionName , id ,type ) =>{
+// export const loadDataDareOrTruth = async ( collectionName , id ,type ) =>{
 
-    console.log('dans la fonction')
+//     console.log('début la fonction')
+//     console.log(collectionName , id , type)
 
-    const rq = doc(firestore , collectionName , id , type)
-    console.log('apres la requête')
+//     const rq = doc(firestore , collectionName , id , type)
+//     console.log("rq" , rq)
     
-     const snapShot = await getDoc(rq) ;
+//     console.log('apres la requête')
+    
+//      const snapShot = await getDoc(rq) ;
      
 
-     return snapShot.exists ? snapShot.data() : null
+//      return snapShot.exists ? snapShot.data() : null
     
+// }
+
+export const loadDataDareOrTruth = async (collectionName , id ,type) => { 
+
+  //console.log('loaddata' , collectionName)
+
+  const rq = query(collection(firestore, collectionName), where("categorie", "==", id) , where("type", "==", type) );
+  // console.log("rq" , rq)
+  // getDocs(rq).then(data => console.log("data" , data)).catch(error => console.log('error , ' , error))
+
+  const snapShot = await getDocs(rq) ;
+  console.log("snapshot" , snapShot)
+
+  if (!(snapShot.empty)) { 
+
+    const dataTemp = snapShot.docs.map(item=>{
+      return{ id: item.id , ...item.data() }
+    })
+
+    return dataTemp ; 
+    
+  }else{
+      return [] ;
+  }
+
+
 }
