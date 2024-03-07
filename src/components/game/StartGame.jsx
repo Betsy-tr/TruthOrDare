@@ -3,6 +3,7 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Button } from 'react-native-paper'
 import { useSelector } from 'react-redux'
+import stylePlayers from '../../styles/stylePlayers'
 
 const StartGame = () => {
 
@@ -17,7 +18,7 @@ const StartGame = () => {
 
   return (
     <View>
-      <Button disabled={!(players.length >= 2)} onPress={start}>Suivant</Button>
+      <Button disabled={!(players.length >= 2)} style={stylePlayers.buttonStartGame} labelStyle={{color: 'white' , fontSize: 21}} onPress={start}>Suivant</Button>
     </View>
   )
 }

@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import ResetGame from '../components/game/ResetGame'
 import { useSelector } from 'react-redux'
@@ -7,6 +7,7 @@ import { loadDataDareOrTruth } from '../commonjs/db'
 import { getRandomInt } from '../commonjs/function'
 
 
+import styleShowTruthOrDare from '../styles/styleShowTruthOrDare'
 
 const ShowTruthOrDare = ({route}) => {
 
@@ -37,12 +38,17 @@ const ShowTruthOrDare = ({route}) => {
   
 
   return (
-    <View>
-      <Text>ShowTruthOrDare</Text>
-      <Text>{players[position].name}</Text>
+    <View style={styleShowTruthOrDare.container}>
+      <ImageBackground
+        style={{flex: 1}}
+        source={require('../assets/bg.png')}
+      >
+        <Text style={styleShowTruthOrDare.namePlayer}>{players[position].name}</Text>
       <Text>{ShowTod?.title}</Text>
-      <NextPlayer id={id}/>
-      <ResetGame/>
+        <Text style={styleShowTruthOrDare.content}>{ShowTod?.title}</Text>
+        <NextPlayer id={id}/>
+        <ResetGame/>
+      </ImageBackground> 
     </View>
   )
 }
