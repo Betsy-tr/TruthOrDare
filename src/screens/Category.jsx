@@ -1,7 +1,11 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Swiper from 'react-native-swiper'
 import { useNavigation } from '@react-navigation/native'
+import { loadData } from '../commonjs/db'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateLoading } from '../redux/loading'
+
 
 var styles = {
   wrapper: {},
@@ -40,27 +44,43 @@ const Category = () => {
 
   const navigation = useNavigation()
 
-  const play = () => { 
+  const [categories, setCategories] = useState([])
+  const loading = useSelector(state=>state.loading)
 
-    navigation.navigate('TruthOrDare')
+  const dispatch = useDispatch()
+
+  const play = (id) => { 
+
+    navigation.navigate('TruthOrDare' , {id: id})
+    console.log("id" , id)
 
   }
 
+  const loadCategory = async () => { 
+
+    dispatch(updateLoading())
+
+    const dataCategories = await loadData('categorie')
+
+    setCategories(dataCategories) ;
+
+    dispatch(updateLoading())
+  }
+
+  useEffect(() => {
+
+    loadCategory()
+
+  }, [])
+
   return (
     <Swiper style={styles.wrapper} showsButtons={false} loop={false}>
-      <View testID="Slide1" style={styles.slide1}>
-        <Text style={styles.text} onPress={play}>Slide 1</Text>
-      </View>
-      <View testID="Slide2" style={styles.slide2}>
-        <Text style={styles.text} onPress={play}>Slide 2</Text>
-      </View>
-      <View testID="Slide3" style={styles.slide3}>
-        <Text style={styles.text} onPress={play}>Slide 3</Text>
-      </View>
-      <View testID="Slide4" style={styles.slide4}>
-        <Text style={styles.text} onPress={play}>Slide 4</Text>
-      </View>
+      {categories.map(data=> <View key={data.id} testID="Slide1" style={styles.slide1}>
+        <Text style={styles.text} onPress={()=>play(data.id)}>{data.name}</Text>
+      </View>)}
+      
     </Swiper>
+
   )
 }
 

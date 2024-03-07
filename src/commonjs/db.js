@@ -1,20 +1,30 @@
-import firestore from '@react-native-firebase/firestore';
+import { firestore } from '../../firebase'
+import { collection, doc , getDoc, getDocs , query } from 'firebase/firestore'
+
 
 export const loadData = async (collectionName) => { 
 
-    const snapShot = await firestore().collection(collectionName).get()
+    //console.log('loaddata' , collectionName)
 
-    if(!snapShot.empty){
+    const rq = query(collection(firestore, collectionName));
+    // console.log("rq" , rq)
+    // getDocs(rq).then(data => console.log("data" , data)).catch(error => console.log('error , ' , error))
 
-        const datas = snapShot.docs.map(doc=>{
+    const snapShot = await getDocs(rq) ;
+    // console.log("snapshot" , snapShot)
 
-            return {id:doc.id , ...doc.data()}
-        })
-        return datas ;
+    if (!(snapShot.empty)) { 
 
+      const dataTemp = snapShot.docs.map(item=>{
+        return{ id: item.id , ...item.data() }
+      })
+
+      return dataTemp ; 
+      
     }else{
-        return []
+        return [] ;
     }
+
 
 }
 
@@ -25,24 +35,16 @@ export const loadData = async (collectionName) => {
  * params(id <string> : id category)
  * 
 ***/ 
-export const loadDataDareOrTruth = async (id , type ) =>{
+export const loadDataDareOrTruth = async ( collectionName , id ,type ) =>{
 
-    const snapShot = await firestore()
-                            .collection("DareOrTruth")
-                            .where("categorie" , "==" , id) 
-                            .where('type' , "==" , type)
-                            .get()
+    console.log('dans la fonction')
 
-    if(!snapShot.empty){
+    const rq = doc(firestore , collectionName , id , type)
+    console.log('apres la requête')
+    
+     const snapShot = await getDoc(rq) ;
+     
 
-        const datas = snapShot.docs.map(doc=>{
-
-            return {id:doc.id , ...doc.data()}
-        })
-        return datas
-        
-    }else{
-        return []
-    }
-
+     return snapShot.exists ? snapShot.data() : null
+    
 }

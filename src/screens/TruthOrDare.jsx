@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux'
 
 const TruthOrDare = ({navigation , route}) => {
 
-  //const { id } = route.params
+  const { id } = route.params
+  console.log("effectué" , id)
 
   const { players , position } = useSelector(state=>state.player)
 
@@ -13,10 +14,8 @@ const TruthOrDare = ({navigation , route}) => {
     <View>
       <Text>TruthOrDare</Text>
       <Text>{players[position].name}</Text>
-      <Button onPress={()=>navigation.navigate('ShowTruthOrDare')}>ACTION</Button>
-      <Button onPress={()=>navigation.navigate('ShowTruthOrDare')}>VÉRITÉ</Button>
-      {/* <Button onPress={()=>navigation.navigate('ShowTruthOrDare' , {id: id , type:'action'})}>ACTION</Button>
-      <Button onPress={()=>navigation.navigate('ShowTruthOrDare' , {id: id , type:'vérité'})}>VÉRITÉ</Button> */}
+      <Button onPress={()=>navigation.navigate('ShowTruthOrDare' , {id: id , type:'action'})}>ACTION</Button>
+      <Button onPress={()=>navigation.navigate('ShowTruthOrDare' , {id: id , type:'vérité'})}>VÉRITÉ</Button>
     </View>
   )
 }
