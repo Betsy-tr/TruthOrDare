@@ -1,5 +1,6 @@
-import { firestore } from '../../firebase'
-import { collection, doc , getDoc, getDocs , query , where } from 'firebase/firestore'
+import { firestore } from '../../firebase';
+import { collection, getDocs , query , where } from 'firebase/firestore'
+
 
 
 export const loadData = async (collectionName) => { 
