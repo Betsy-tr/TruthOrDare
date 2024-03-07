@@ -23,7 +23,7 @@ const Home = ({navigation}) => {
           }} 
           labelStyle={{
             color: 'white', 
-            fontSize: 21
+            fontSize: 21,
           }} 
           onPress={() => navigation.navigate('Players')}
         >

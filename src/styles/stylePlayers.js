@@ -6,7 +6,7 @@ export default StyleSheet.create({
         flex:1
     },
     title:{
-        fontFamily: 'Fredericka the Great',
+        fontFamily: 'FrederickatheGreat-Regular',
         color: 'white',
         fontSize : 40,
         fontWeight: '400',
@@ -36,7 +36,8 @@ export default StyleSheet.create({
         color: 'white',
         fontSize: 20,
         marginTop: 10,
-        marginLeft: 35
+        marginLeft: 35,
+        fontFamily: "FrederickatheGreat-Regular"
     },
     buttonResetPlayer:{
         borderRadius: 15,
