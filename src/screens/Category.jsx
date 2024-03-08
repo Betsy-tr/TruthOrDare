@@ -9,34 +9,11 @@ import { updateLoading } from '../redux/loading'
 
 var styles = {
   wrapper: {},
-  slide1: {
+  slide: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#64EB16'
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F2FF00'
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F71AAA'
-  },
-  slide4: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#4A1EFB'
-  },
-  text: {
-    color: '#000',
-    fontSize: 30,
-    fontWeight: 'bold'
+    backgroundColor: '#EB16B9'
   }
 }
 
@@ -75,8 +52,8 @@ const Category = () => {
 
   return (
     <Swiper style={styles.wrapper} showsButtons={false} loop={false}>
-      {categories.map(data=> <View key={data.id} testID="Slide1" style={styles.slide1}>
-        <Text style={styles.text} onPress={()=>play(data.id)}>{data.name}</Text>
+      {categories.map(data=> <View key={data.id} testID="Slide" style={styles.slide}>
+        <Text style={{fontFamily: 'Fredericka the Great' , fontSize: 64 , color: 'white' , fontWeight: 400}} onPress={()=>play(data.id)}>{data.name}</Text>
       </View>)}
       
     </Swiper>

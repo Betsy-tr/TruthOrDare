@@ -16,16 +16,19 @@ export default StyleSheet.create({
     },
     namePlayer:{
         color: 'white',
-        fontSize: 35,
+        fontFamily: 'Handlee',
+        fontSize: 48,
         marginTop: 100,
         textAlign: 'center',
         marginBottom: 45
     },
     content:{
         color: 'white',
+        fontFamily: 'Handlee',
         fontSize: 30,
         textAlign: 'center',
-        marginBottom: 70
+        paddingBottom: 85,
+        margin: 10
     },
     buttonNextPlayer:{
         borderRadius: 15,

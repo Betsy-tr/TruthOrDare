@@ -32,7 +32,7 @@ const NextPlayer = ({id}) => {
 
   return (
     <View>
-      <Button style={styleShowTruthOrDare.buttonNextPlayer} labelStyle={{color: 'white' , fontSize: 21}} onPress={suivant}>Joueur suivant</Button>
+      <Button style={styleShowTruthOrDare.buttonNextPlayer} labelStyle={{color: 'white' , fontSize: 21 , fontFamily: 'Handlee'}} onPress={suivant}>Joueur suivant</Button>
     </View>
   )
 }

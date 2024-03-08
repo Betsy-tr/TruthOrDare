@@ -15,7 +15,7 @@ const ResetGame = () => {
 
   return (
     <View>
-      <Button style={styleShowTruthOrDare.buttonResetGame} labelStyle={{color: 'white' , fontSize: 21}} onPress={reset}>Quitter la partie</Button>
+      <Button style={styleShowTruthOrDare.buttonResetGame} labelStyle={{color: 'white' , fontSize: 21 , fontFamily: 'Handlee'}} onPress={reset}>Quitter la partie</Button>
     </View>
   )
 }

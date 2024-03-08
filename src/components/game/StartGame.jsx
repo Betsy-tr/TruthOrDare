@@ -18,7 +18,7 @@ const StartGame = () => {
 
   return (
     <View>
-      <Button disabled={!(players.length >= 2)} style={stylePlayers.buttonStartGame} labelStyle={{color: 'white' , fontSize: 21}} onPress={start}>Suivant</Button>
+      <Button disabled={!(players.length >= 2)} style={stylePlayers.buttonStartGame} labelStyle={{color: 'white' , fontSize: 21 , fontFamily: 'Handlee'}} onPress={start}>Suivant</Button>
     </View>
   )
 }

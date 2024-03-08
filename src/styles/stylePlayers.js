@@ -6,13 +6,13 @@ export default StyleSheet.create({
         flex:1
     },
     title:{
-        fontFamily: 'FrederickatheGreat-Regular',
+        fontFamily: 'Fredericka the Great',
         color: 'white',
-        fontSize : 40,
+        fontSize : 48,
         fontWeight: '400',
         marginTop: 22,
         marginLeft: 15,
-        marginBottom: 20
+        marginBottom: 25
     },
     input:{
         backgroundColor: 'transparent',
@@ -25,19 +25,21 @@ export default StyleSheet.create({
         height: 50,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 10
+        marginBottom: 35,
     },
     empty:{
-        fontSize: 18,
+        fontFamily: 'Handlee',
+        fontSize: 19,
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        margin: 7
     },
     namePlayer:{
         color: 'white',
-        fontSize: 20,
+        fontSize: 22,
         marginTop: 10,
         marginLeft: 35,
-        fontFamily: "FrederickatheGreat-Regular"
+        fontFamily: "Handlee"
     },
     buttonResetPlayer:{
         borderRadius: 15,

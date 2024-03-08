@@ -44,7 +44,6 @@ const ShowTruthOrDare = ({route}) => {
         source={require('../assets/bg.png')}
       >
         <Text style={styleShowTruthOrDare.namePlayer}>{players[position].name}</Text>
-      <Text>{ShowTod?.title}</Text>
         <Text style={styleShowTruthOrDare.content}>{ShowTod?.title}</Text>
         <NextPlayer id={id}/>
         <ResetGame/>

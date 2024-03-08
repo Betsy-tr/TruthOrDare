@@ -15,7 +15,7 @@ const ResetPlayer = () => {
 
   return (
     <View>
-      <Button style={stylePlayers.buttonResetPlayer} labelStyle={{color: 'white' , fontSize: 21}} onPress={reset}>Vider la liste</Button>
+      <Button style={stylePlayers.buttonResetPlayer} labelStyle={{color: 'white' , fontSize: 21 , fontFamily: 'Handlee'}} onPress={reset}>Vider la liste</Button>
     </View>
   )
 }

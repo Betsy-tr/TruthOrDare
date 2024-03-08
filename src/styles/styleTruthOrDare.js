@@ -7,10 +7,11 @@ export default StyleSheet.create({
     },
     namePlayer:{
         color: 'white',
-        fontSize: 40,
+        fontSize: 45,
         marginTop: 200,
         marginLeft: 55,
-        marginBottom: 140
+        marginBottom: 140,
+        fontFamily: 'Handlee'
     },
     buttonDare:{
         borderRadius: 15,
