@@ -36,30 +36,12 @@ export const loadData = async (collectionName) => {
  * params(id <string> : id category)
  * 
 ***/ 
-// export const loadDataDareOrTruth = async ( collectionName , id ,type ) =>{
-
-//     console.log('début la fonction')
-//     console.log(collectionName , id , type)
-
-//     const rq = doc(firestore , collectionName , id , type)
-//     console.log("rq" , rq)
-    
-//     console.log('apres la requête')
-    
-//      const snapShot = await getDoc(rq) ;
-     
-
-//      return snapShot.exists ? snapShot.data() : null
-    
-// }
 
 export const loadDataDareOrTruth = async (collectionName , id ,type) => { 
 
   //console.log('loaddata' , collectionName)
 
   const rq = query(collection(firestore, collectionName), where("categorie", "==", id) , where("type", "==", type) );
-  // console.log("rq" , rq)
-  // getDocs(rq).then(data => console.log("data" , data)).catch(error => console.log('error , ' , error))
 
   const snapShot = await getDocs(rq) ;
   console.log("snapshot" , snapShot)
@@ -76,5 +58,30 @@ export const loadDataDareOrTruth = async (collectionName , id ,type) => {
       return [] ;
   }
 
-
 }
+
+/*** export const loadDataDareOrTruthTod = async (id, type, tod) => {
+    
+  console.log('tod', tod)
+
+  // console.log('loaddata', id)
+
+  const snapShot = await firestore()
+      .collection("DareOrTruth")
+      .where("categorie","==",id)
+      .where('type', "==", type)
+      .where(firestore.FieldPath.documentId(), 'not-in', tod )
+      .get()
+
+  //vérifier l'exsistence de la donné
+  if (!snapShot.empty) {
+
+      const datas = snapShot.docs.map(doc => {
+          return {id:doc.id, ...doc.data() }
+      })
+
+      return datas
+  } else {
+      return []
+  }
+} **/

@@ -25,7 +25,7 @@ export default StyleSheet.create({
     content:{
         color: 'white',
         fontFamily: 'Handlee',
-        fontSize: 30,
+        fontSize: 25,
         textAlign: 'center',
         paddingBottom: 85,
         margin: 10

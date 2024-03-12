@@ -29,6 +29,9 @@ export const player = createSlice({
             const newState = {...state , position: action.payload}
             return newState ;
         },
+        /** updateTod: (state, action) => {
+            state.players[state.position].tod.push(action.payload)
+        }**/
     }
 })
 
