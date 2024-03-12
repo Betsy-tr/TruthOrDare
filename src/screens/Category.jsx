@@ -52,7 +52,7 @@ const Category = () => {
           <Swiper style={styles.wrapper} showsButtons={false} loop={false}>
             {categories.map(data=> <View key={data.id} testID="Slide" style={styles.slide}>
               <Text style={{fontFamily: 'Fredericka the Great' , fontSize: 64 , color: 'white' , fontWeight: 400}} onPress={()=>play(data.id)}>{data.name}</Text>
-              <Image src={data?.image}/>
+              {/* <Image src={data?.image}/> */}
             </View>)}
           </Swiper>
         
