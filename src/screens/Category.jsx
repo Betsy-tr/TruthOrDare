@@ -1,46 +1,65 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Swiper from 'react-native-swiper'
 import { useNavigation } from '@react-navigation/native'
 import { loadData } from '../commonjs/db'
-import { useDispatch, useSelector } from 'react-redux'
-import { updateLoading } from '../redux/loading'
-import { ActivityIndicator } from 'react-native-paper'
+import { useSelector } from 'react-redux'
+import AppIntroSlider from 'react-native-app-intro-slider'
+import Loading from '../components/Loading'
+import loading from '../redux/loading'
 
 
 
-var styles = {
-  wrapper: {},
-  slide: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-}
-
-const Category = () => {
-
-  const navigation = useNavigation()
-  const [categories, setCategories] = useState([])
-  const loading = useSelector(state=>state.loading)
-  const dispatch = useDispatch()
-
+const RenderItem = ({item , navigation}) => {
+  console.log("item" , item)
+  
   const play = (id) => { 
 
     navigation.navigate('TruthOrDare' , {id: id})
     console.log("id" , id)
   }
 
+  return (
+      
+      <TouchableOpacity onPress={()=>play(item.id)} style={{flex: 1}}>
+        <ImageBackground
+          style={{ flex: 1 }}
+          source={{uri : item.image}}
+        >
+          <Text style={{
+            color: 'white',
+            textAlign: 'center',
+            fontFamily: 'Fredericka the Great', 
+            fontSize: 64,
+            fontWeight: 400,
+            marginTop: 265
+            }}
+
+            onPress={()=>play(data.id)}
+          >
+            {item.name}
+          </Text>
+        </ImageBackground>
+      </TouchableOpacity>
+    )
+}
+
+const Category = () => {
+
+  const navigation = useNavigation()
+  const [categories, setCategories] = useState([])
+  const [loading, setLoading] = useState(true)
+
   const loadCategory = async () => { 
 
-    dispatch(updateLoading(true))
+    setLoading(true) // Début du loading
 
     const dataCategories = await loadData('categorie')
     console.log("dataCategories" , dataCategories)
 
     setCategories(dataCategories) ;
 
-    dispatch(updateLoading(false))
+    setLoading(false) // Fin du téléchargement
   }
 
   useEffect(() => {
@@ -48,16 +67,13 @@ const Category = () => {
   }, [])
 
   return (
-       
-          <Swiper style={styles.wrapper} showsButtons={false} loop={false}>
-            {categories.map(data=> <View key={data.id} testID="Slide" style={styles.slide}>
-              <Text style={{fontFamily: 'Fredericka the Great' , fontSize: 64 , color: 'white' , fontWeight: 400}} onPress={()=>play(data.id)}>{data.name}</Text>
-              {/* <Image src={data?.image}/> */}
-            </View>)}
-          </Swiper>
-        
-      
-    
+    <>    
+      {loading ? <Loading/> : <AppIntroSlider
+        keyExtractor={(item)=>item.id}
+        renderItem={({item})=><RenderItem item={item} navigation={navigation}/>}
+        data={categories}
+      /> }
+    </>  
   )
 }
 
