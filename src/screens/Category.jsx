@@ -34,8 +34,6 @@ const RenderItem = ({item , navigation}) => {
             fontWeight: 400,
             marginTop: 265
             }}
-
-            onPress={()=>play(data.id)}
           >
             {item.name}
           </Text>
